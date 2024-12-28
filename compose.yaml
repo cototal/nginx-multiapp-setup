@@ -23,9 +23,6 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.spa.rule=Host(`localhost`) && PathPrefix(`/`)"
       - "traefik.http.routers.spa.priority=1"
-      - "traefik.http.middlewares.spa-rewrite.replacepathregex.regex=^/(.*)"
-      - "traefik.http.middlewares.spa-rewrite.replacepathregex.replacement=/index.html"
-      - "traefik.http.routers.spa.middlewares=spa-rewrite"
       - "traefik.http.services.spa.loadbalancer.server.port=80"
 
   symfony-php:
